@@ -134,7 +134,7 @@ sub PresentQuiz {
 	}
 	foreach (@choices) {
 		# display the multiple choices
-		print "<a href='$0?q=$this&a=$_&intro=no'>${$VAR1}[$_]{'name'}</a><br />\n";
+		print "<a href='$ME?q=$this&a=$_&intro=no'>${$VAR1}[$_]{'name'}</a><br />\n";
 	}
 }
 
