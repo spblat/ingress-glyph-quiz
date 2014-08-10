@@ -199,10 +199,6 @@ sub initialize {
             'file' => '/glyphs/thumbs/Breathe.png'
           },
           {
-            'file' => '/glyphs/thumbs/Calibration-Grid.png',
-            'name' => 'Calibration Grid'
-          },
-          {
             'name' => 'Capture',
             'file' => '/glyphs/thumbs/Capture.png'
           },
@@ -650,21 +646,5 @@ sub initialize {
             'name' => 'You / Other',
             'file' => '/glyphs/thumbs/You-Other.png'
           },
-          {
-            'file' => '/glyphs/thumbs/Unknown01.png',
-            'name' => '[unknown]'
-          },
-          {
-            'name' => '[unknown]',
-            'file' => '/glyphs/thumbs/Unknown05.png'
-          },
-          {
-            'file' => '/glyphs/thumbs/Unknown06.png',
-            'name' => '[unknown]'
-          },
-          {
-            'name' => '/glyphs/thumbs/Unknown06.png',
-            'file' => '/glyphs/thumbs/Unknown06.png'
-          }
         ];
 }
