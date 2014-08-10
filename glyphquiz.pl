@@ -30,6 +30,8 @@ To do someday (probably by someone else):
  - CSS/make it pretty/close HTML tags etc
  - Cookies
  - Eliminate dependence on glyphtionary.com images
+ 
+ See also https://github.com/spblat/ingress-glyph-quiz
 
 ___
 
@@ -86,7 +88,7 @@ if ($opt_i) {
 	my $query = CGI->new;
 	$ME = url(-relative=>1);
 	my $checkforintro = $query->param('intro');
-	&Intro unless $checkforintro; # present introduction if no CGI input
+	&Intro unless $rand; # present introduction if no CGI input
 	
 	# Evaluate answer we got from user (if any)
 	# it would be better to use a cookie but who cares
@@ -134,9 +136,10 @@ sub PresentQuiz {
 			unshift @choices, $choice;
 		}
 	}
+	my $random = int(rand(65535)); # so links stay blue
 	foreach (@choices) {
 		# display the multiple choices
-		print "<a href='$ME?q=$this&a=$_&intro=no'>${$VAR1}[$_]{'name'}</a><br />\n";
+		print "<a href='$ME?q=$this&a=$_&rand=$random'>${$VAR1}[$_]{'name'}</a><br />\n";
 	}
 	print "</td>\n";
 }
