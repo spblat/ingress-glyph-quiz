@@ -37,7 +37,7 @@ use strict;
 use warnings;
 use Getopt::Std;
 our $opt_i;
-use vars qw($VAR1  $URL $ABOUT);
+use vars qw($VAR1  $URL $ABOUT $ME);
 
 $URL = 'http://glyphtionary.com';
 
@@ -84,7 +84,7 @@ if ($opt_i) {
 	print "<body bgcolor='#cccccc'>";
 	# Let's have a quiz. 
 	my $query = CGI->new;
-	my $url = url();
+	$ME = url();
 	my $checkforintro = $query->param('intro');
 	&Intro unless $checkforintro; # present introduction if no CGI input
 	
@@ -111,7 +111,7 @@ if ($opt_i) {
 
 sub Intro {
 	print "<pre>$ABOUT</pre>";
-	print "<br /><b><a href='$0?intro=no'>Begin</a></b>\n";
+	print "<br /><b><a href='$ME?intro=no'>Begin</a></b>\n";
 	exit;
 }
 
