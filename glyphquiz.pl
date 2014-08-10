@@ -81,7 +81,7 @@ if ($opt_i) {
 	&initialize or die;
 	my $q = CGI->new;
 	print $q->header;
-	print "<body bgcolor='#cccccc'>";
+	print "<body bgcolor='#cccccc'><table><tr>";
 	# Let's have a quiz. 
 	my $query = CGI->new;
 	$ME = url(-relative=>1);
@@ -94,6 +94,7 @@ if ($opt_i) {
 	my $guess = $query->param('a');
 	my $answer = $query->param('q');
 	if ($guess && $answer) {
+		print "<td>";
 		my $name = ${$VAR1}[$answer]{'name'};
 		if ($guess == $answer) {
 			print "<h1>Correct!</h1>\n";
@@ -102,10 +103,12 @@ if ($opt_i) {
 		}
 		# Display the Glyph with the right name
 		print "<h2>${$VAR1}[$answer]{'name'}</h2>\n";
-		print "<img src='$URL${$VAR1}[$answer]{'file'}'><br />\n";
+		print "<img src='$URL${$VAR1}[$answer]{'file'}'><br /></td>\n";
 	}
 	
 	&PresentQuiz; # Present a quiz
+	
+	print "</tr></table></body>";
 	
 }
 
@@ -120,7 +123,7 @@ sub PresentQuiz {
 	my $howmany = scalar(@{$VAR1}); # we go from 0 to $howmany - 1
 	# my $last = ${$VAR1}[$howmany - 1]{'name'};
 	my $this = int(rand($howmany));
-	print "<h1>What is it?</h1>\n";
+	print "<td><h1>What is it?</h1>\n";
 	print "<img src='$URL${$VAR1}[$this]{'file'}'><br />\n";
 	my @choices; # array of possible choices
 	push @choices, $this;
@@ -136,6 +139,7 @@ sub PresentQuiz {
 		# display the multiple choices
 		print "<a href='$ME?q=$this&a=$_&intro=no'>${$VAR1}[$_]{'name'}</a><br />\n";
 	}
+	print "</td>\n";
 }
 
 sub initialize {
