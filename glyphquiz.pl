@@ -84,7 +84,7 @@ if ($opt_i) {
 	print "<body bgcolor='#cccccc'>";
 	# Let's have a quiz. 
 	my $query = CGI->new;
-	$ME = url();
+	$ME = url(-relative=>1);
 	my $checkforintro = $query->param('intro');
 	&Intro unless $checkforintro; # present introduction if no CGI input
 	
