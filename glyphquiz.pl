@@ -87,8 +87,8 @@ if ($opt_i) {
 	# Let's have a quiz. 
 	my $query = CGI->new;
 	$ME = url(-relative=>1);
-	my $checkforintro = $query->param('intro');
-	&Intro unless $rand; # present introduction if no CGI input
+	my $checkforintro = $query->param('rand');
+	&Intro unless $checkforintro; # present introduction if no CGI input
 	
 	# Evaluate answer we got from user (if any)
 	# it would be better to use a cookie but who cares
