@@ -81,7 +81,7 @@ if ($opt_i) {
 	&initialize or die;
 	my $q = CGI->new;
 	print $q->header;
-	print "<html><body bgcolor='#cccccc'><table cellspacing=50><tr>";
+	print "<html><body bgcolor='#cccccc'><table cellpadding=80><tr>";
 	# Let's have a quiz. 
 	my $query = CGI->new;
 	$ME = url(-relative=>1);
