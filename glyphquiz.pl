@@ -36,7 +36,6 @@ ___
 use strict;
 use warnings;
 use Getopt::Std;
-use HTTP::Tiny;
 our $opt_i;
 use vars qw($VAR1  $URL $ABOUT);
 
@@ -49,6 +48,7 @@ if ($opt_i) {
 	# user asked to reinitialize variables. Scrape the glyphtionary.
 
 	use Data::Dumper;
+	use HTTP::Tiny;
 
 	# https://metacpan.org/pod/HTTP::Tiny
 
