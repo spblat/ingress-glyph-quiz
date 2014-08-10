@@ -115,7 +115,7 @@ if ($opt_i) {
 
 sub Intro {
 	print "<pre>$ABOUT</pre>";
-	print "<br /><b><a href='$ME?intro=no'>Begin</a></b>\n";
+	print "<br /><b><a href='$ME?rand=0'>Begin</a></b>\n";
 	exit;
 }
 
