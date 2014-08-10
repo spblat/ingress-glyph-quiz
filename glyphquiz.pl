@@ -94,12 +94,11 @@ if ($opt_i) {
 	my $guess = $query->param('a');
 	my $answer = $query->param('q');
 	if ($guess && $answer) {
-		print "<td width=\"50%\">";
 		my $name = ${$VAR1}[$answer]{'name'};
 		if ($guess == $answer) {
-			print "<h1>Correct!</h1>\n";
+			print "<td style=\"background-color:green\"><h1>Correct!</h1>\n";
 		} else {
-			print "<h1>INCORRECT</h1>\n";
+			print "<td style=\"background-color:red\"><h1>INCORRECT</h1>\n";
 		}
 		# Display the Glyph with the right name
 		print "<h2>${$VAR1}[$answer]{'name'}</h2>\n";
@@ -123,7 +122,7 @@ sub PresentQuiz {
 	my $howmany = scalar(@{$VAR1}); # we go from 0 to $howmany - 1
 	# my $last = ${$VAR1}[$howmany - 1]{'name'};
 	my $this = int(rand($howmany));
-	print "<td width=\"50%\"><h1>What is it?</h1>\n";
+	print "<td><h1>What is it?</h1><h2> </h2>\n";
 	print "<img src='$URL${$VAR1}[$this]{'file'}'><br />\n";
 	my @choices; # array of possible choices
 	push @choices, $this;
