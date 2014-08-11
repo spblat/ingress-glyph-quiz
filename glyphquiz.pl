@@ -132,8 +132,8 @@ sub PresentQuiz {
 	my $howmany = scalar(@{$VAR1}); # we go from 0 to $howmany - 1
 	# my $last = ${$VAR1}[$howmany - 1]{'name'};
 	my $this = int(rand($howmany));
-	print "<td style=\"background-color:black\"><h1 style=\"color:white\">What is it?</h1><h2> </h2>\n";
-	print "<img src='$URL${$VAR1}[$this]{'file'}'><br />\n";
+	print "<td style=\"background-color:black;text-align:center\"><h1 style=\"color:white\">What is it?</h1><h2> </h2>\n";
+	print "<img src='$URL${$VAR1}[$this]{'file'}'><br /><br />\n";
 	my @choices; # array of possible choices
 	push @choices, $this;
 	for (1 .. 2) {
