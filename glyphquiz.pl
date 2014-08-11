@@ -113,13 +113,17 @@ if ($opt_i) {
 	
 	&PresentQuiz; # Present a quiz
 	
-	print "</tr></table></body></html>";
+	print<<___;
+		</tr></table>
+		<font size="small"><a href="$ME">about</a></font>
+		</body></html>
+___
 	
 }
 
 sub Intro {
 	print "$ABOUT";
-	print "<br /><h1><a href='$ME?rand=1'>Begin</a></h1>\n";
+	print "<br /><h1><a href='$ME?rand=1'>Begin</a></h1></body></html>\n";
 	exit;
 }
 
@@ -141,7 +145,7 @@ sub PresentQuiz {
 		}
 	}
 	my $random = "I";
-	$random .= int(rand(10)) foreach (1 .. 500); # so links stay blue and you can't cheat with status bar
+	$random .= int(rand(10)) foreach (1 .. 50); # so links stay blue
 	foreach (@choices) {
 		# display the multiple choices
 		print "<a href='$ME?rand=$random&q=$this&a=$_'>${$VAR1}[$_]{'name'}</a><br />\n";
