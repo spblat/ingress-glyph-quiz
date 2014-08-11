@@ -1,10 +1,17 @@
 ingress-glyph-quiz
 ==================
-This little hack provides an interactive quiz to help you learn the "hacking glyphs" in the game Ingress. Thanks to http://glyphtionary.com for the images you see in this quiz.
+This little hack provides an interactive quiz to help you learn the "hacking 
+glyphs" in the game Ingress. Thanks to http://glyphtionary.com for the images 
+you see in this quiz.
 
-It's crude and probably buggy. It was made by @spblat. It's licensed under the MIT License, which means I don't really care what happens to it but I do retain some basic rights.
+It's crude and probably buggy. It was made by @spblat. It's licensed under 
+the MIT License, which means I don't really care what happens to it but I 
+do retain some basic rights.
 
-This script displays images pulled directly from glyphtionary.com. If this annoys them they have the ability to break this script by denying access except with a proper referrer. If they do that, I'll give them this code and ask them to host it themselves, cause that would be cool.
+This script displays images pulled directly from glyphtionary.com. If this 
+annoys them they have the ability to break this script by denying access 
+except with a proper referrer. If they do that, I'll give them this code 
+and ask them to host it themselves, cause that would be cool.
 
 To do maybe (perhaps by someone else):
 
