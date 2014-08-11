@@ -29,4 +29,4 @@ Features I don't care about:
 - Make it so you can't cheat by hacking the URL
 - Social networking features, score-sharing
 - Make it use cookies for some reason
-- Cookies
+

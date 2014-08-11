@@ -30,7 +30,6 @@ To do maybe (perhaps by someone else):<ul>
 <LI> Make it so you can't cheat by hacking the URL
 <LI> Social networking features, score-sharing
 <LI> Make it use cookies for some reason
-<LI> Cookies</ul><P>
  
  You can see and contribute to <a href="https://github.com/spblat/ingress-glyph-quiz">the
  perl source at GitHub</a>.
