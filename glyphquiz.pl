@@ -87,7 +87,7 @@ if ($opt_i) {
 	&initialize or die;
 	my $q = CGI->new;
 	print $q->header;
-	print "<html><body bgcolor='#cccccc'><table cellpadding=80><tr>";
+	print "<html><body bgcolor='#cccccc'><table cellpadding=80;table-layout:fixed;><tr>";
 	# Let's have a quiz. 
 	my $query = CGI->new;
 	$ME = url(-relative=>1);
@@ -102,9 +102,9 @@ if ($opt_i) {
 	if ($guess && $answer) {
 		my $name = ${$VAR1}[$answer]{'name'};
 		if ($guess == $answer) {
-			print "<td style=\"background-color:green;text-align:center\">\n";
+			print "<td style=\"background-color:green;text-align:center;width: 400px;\">\n";
 		} else {
-			print "<td style=\"background-color:red;text-align:center\">\n";
+			print "<td style=\"background-color:red;text-align:center;width: 400px;\">\n";
 		}
 		# Display the Glyph with the right name
 		print "<h1>${$VAR1}[$answer]{'name'}</h1>\n";
