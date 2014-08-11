@@ -99,7 +99,7 @@ if ($opt_i) {
 	# test with CGI debug flag and "./glyphquiz.pl q=49 a=49"
 	my $guess = $query->param('a');
 	my $answer = $query->param('q');
-	$WIN = $query->param('w');
+	$WIN = $query->param('w') ? $query->param('w') : 0;
 	$LOSS = $query->param('l');
 	if ($guess && $answer) {
 		my $name = ${$VAR1}[$answer]{'name'};
