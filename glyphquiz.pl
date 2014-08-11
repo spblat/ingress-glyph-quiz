@@ -19,6 +19,7 @@ host it themselves, cause that would be cool.<P>
 
 To do maybe (perhaps by someone else):<ul>
 
+<LI> Mobile version
 <LI> Make it so that you can't cheat by looking at the status bar
 <LI> Track a user's trouble glyphs and focus on those
 <LI> CSS/make it pretty/close HTML tags etc
