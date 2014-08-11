@@ -119,7 +119,7 @@ if ($opt_i) {
 	
 	my $score;
 	if ($LOSS > 0) {
-		$score = "| Won: $WIN | Lost: $LOSS | " . int($WIN * 100 / $LOSS) . "%";
+		$score = "| Won: $WIN | Lost: $LOSS | " . int($WIN * 100 / ($WIN + $LOSS) . "%";
 	} else {
 		$score = "| 100%";
 	}
