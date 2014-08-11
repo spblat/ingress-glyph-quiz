@@ -102,7 +102,7 @@ if ($opt_i) {
 	if ($guess && $answer) {
 		my $name = ${$VAR1}[$answer]{'name'};
 		if ($guess == $answer) {
-			print "<td style=\"background-color:green\"><h1>Correct!</h1>\n";
+			print "<td style=\"background-color:green\">\n";
 		} else {
 			print "<td style=\"background-color:red\">\n";
 		}
