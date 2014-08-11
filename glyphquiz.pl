@@ -140,7 +140,8 @@ sub PresentQuiz {
 			unshift @choices, $choice;
 		}
 	}
-	my $random .= int(rand(10)) foreach (1 .. 500); # so links stay blue and you can't cheat with status bar
+	my $random = "I";
+	$random .= int(rand(10)) foreach (1 .. 500); # so links stay blue and you can't cheat with status bar
 	foreach (@choices) {
 		# display the multiple choices
 		print "<a href='$ME?rand=$random&q=$this&a=$_'>${$VAR1}[$_]{'name'}</a><br />\n";
