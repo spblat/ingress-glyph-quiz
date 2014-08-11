@@ -104,10 +104,10 @@ if ($opt_i) {
 		if ($guess == $answer) {
 			print "<td style=\"background-color:green\"><h1>Correct!</h1>\n";
 		} else {
-			print "<td style=\"background-color:red\"><h1>INCORRECT</h1>\n";
+			print "<td style=\"background-color:red\">\n";
 		}
 		# Display the Glyph with the right name
-		print "<h2>${$VAR1}[$answer]{'name'}</h2>\n";
+		print "<h1>${$VAR1}[$answer]{'name'}</h1>\n";
 		print "<img src='$URL${$VAR1}[$answer]{'file'}'><br /></td>\n";
 	}
 	
