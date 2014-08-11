@@ -7,7 +7,7 @@ This little hack provides an interactive quiz to help you learn the "hacking
 glyphs" in the game Ingress. Thanks to http://glyphtionary.com for the images 
 you see in this quiz.
 
-It's crude and probably buggy. It was made by @spblat. It's licensed under 
+It's crude and probably buggy. It was made by [@spblat](http://twitter.com/spblat). It's licensed under 
 the MIT License, which means I don't really care what happens to it but I 
 do retain some basic rights.
 
