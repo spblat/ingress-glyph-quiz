@@ -18,6 +18,7 @@ and ask them to host it themselves, cause that would be cool.
 
 To do maybe (perhaps by someone else):
 
+- Mobile version
 - Make it so that you can't cheat by looking at the status bar
 - Track a user's trouble glyphs and focus on those
 - CSS/make it pretty/close HTML tags etc
