@@ -148,7 +148,7 @@ sub PresentQuiz {
 	$random .= int(rand(10)) foreach (1 .. 50); # so links stay blue
 	foreach (@choices) {
 		# display the multiple choices
-		print "<a href='$ME?rand=$random&q=$this&a=$_'>${$VAR1}[$_]{'name'}</a><br />\n";
+		print "<a style=\"color:white\" href='$ME?rand=$random&q=$this&a=$_'>${$VAR1}[$_]{'name'}</a><br />\n";
 	}
 	print "</td>\n";
 }
