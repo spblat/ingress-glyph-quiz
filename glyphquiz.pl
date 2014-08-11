@@ -102,9 +102,9 @@ if ($opt_i) {
 	if ($guess && $answer) {
 		my $name = ${$VAR1}[$answer]{'name'};
 		if ($guess == $answer) {
-			print "<td style=\"background-color:green;text-align:center;width: 400px;\">\n";
+			print "<td style=\"background-color:green;text-align:center;width: 300px;\">\n";
 		} else {
-			print "<td style=\"background-color:red;text-align:center;width: 400px;\">\n";
+			print "<td style=\"background-color:red;text-align:center;width: 300px;\">\n";
 		}
 		# Display the Glyph with the right name
 		print "<h1>${$VAR1}[$answer]{'name'}</h1>\n";
@@ -132,7 +132,7 @@ sub PresentQuiz {
 	my $howmany = scalar(@{$VAR1}); # we go from 0 to $howmany - 1
 	# my $last = ${$VAR1}[$howmany - 1]{'name'};
 	my $this = int(rand($howmany));
-	print "<td style=\"background-color:black;text-align:center\"><h1 style=\"color:white\">What is it?</h1><h2> </h2>\n";
+	print "<td style=\"background-color:black;text-align:center;width: 300px;\"><h1 style=\"color:white\">What is it?</h1><h2> </h2>\n";
 	print "<img src='$URL${$VAR1}[$this]{'file'}'><br /><br />\n";
 	my @choices; # array of possible choices
 	push @choices, $this;
