@@ -82,16 +82,17 @@ if ($opt_i) {
 	print Dumper (\@output);
 	
 	print "\n\nCopy all that crap back into the perl script to update the set of glyphs.\n";
-} else {
+} else { 
+	# would you like to play a game?
 	use CGI qw/ :standard -debug /; # remove debug when in production
 	&initialize or die;
 	my $q = CGI->new;
 	print $q->header;
 	print "<html><body><table cellpadding=80;table-layout:fixed;><tr>";
-	# Let's have a quiz. 
 	my $query = CGI->new;
 	$ME = url(-relative=>1);
 	my $checkforintro = $query->param('rand');
+
 	&Intro unless $checkforintro; # present introduction if no CGI input
 	
 	# Evaluate answer we got from user (if any)
@@ -147,9 +148,9 @@ sub PresentQuiz {
 	print "<img src='$URL${$VAR1}[$this]{'file'}'><br /><br />\n";
 	my @choices; # array of possible choices
 	push @choices, $this;
-	for (1 .. 2) {
+	for (1 .. 3) {
 		my $choice = int(rand($howmany));
-		if (rand() > 0.5) { # randomize the three choices
+		if (rand() > 0.5) { # randomize the choices
 			push @choices, $choice;
 		} else {
 			unshift @choices, $choice;
