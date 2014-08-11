@@ -117,9 +117,15 @@ if ($opt_i) {
 	
 	&PresentQuiz; # Present a quiz
 	
+	my $score;
+	if ($LOSS > 0) {
+		$score = "| Won: $WIN | Lost: $LOSS | " . int($WIN * 100 / $LOSS) . "%";
+	} else {
+		$score = "| 100%";
+	}
 	print<<___;
 		</tr></table>
-		<p style="font-size:12px"><a href="$ME">about</a> | Won: $WIN | Lost: $LOSS</p></font>
+		<p style="font-size:12px"><a href="$ME">about</a> $score</p></font>
 		</body></html>
 ___
 	
