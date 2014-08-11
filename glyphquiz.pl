@@ -132,7 +132,8 @@ ___
 
 sub Intro {
 	print "$ABOUT";
-	print "<br /><h1><a href='$ME?rand=1'>Begin</a></h1></body></html>\n";
+	print "<P>There are " . scalar(@{$VAR1}) . " glyphs in this quiz.\n";
+	print "<p><h1><a href='$ME?rand=1'>Begin</a></h1></body></html>\n";
 	exit;
 }
 
