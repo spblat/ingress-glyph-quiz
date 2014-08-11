@@ -1,5 +1,8 @@
 ingress-glyph-quiz
 ==================
+
+![](http://i.imgur.com/rxYNEGk.png)
+
 This little hack provides an interactive quiz to help you learn the "hacking 
 glyphs" in the game Ingress. Thanks to http://glyphtionary.com for the images 
 you see in this quiz.
