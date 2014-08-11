@@ -115,7 +115,7 @@ if ($opt_i) {
 	
 	print<<___;
 		</tr></table>
-		<p style="font-size:8px"><a href="$ME">about</a></p></font>
+		<p style="font-size:11px"><a href="$ME">about</a></p></font>
 		</body></html>
 ___
 	
