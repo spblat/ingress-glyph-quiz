@@ -102,9 +102,9 @@ if ($opt_i) {
 	if ($guess && $answer) {
 		my $name = ${$VAR1}[$answer]{'name'};
 		if ($guess == $answer) {
-			print "<td style=\"background-color:green;align=center\">\n";
+			print "<td style=\"background-color:green;text-align:center\">\n";
 		} else {
-			print "<td style=\"background-color:red\">\n";
+			print "<td style=\"background-color:red;text-align:center\">\n";
 		}
 		# Display the Glyph with the right name
 		print "<h1>${$VAR1}[$answer]{'name'}</h1>\n";
