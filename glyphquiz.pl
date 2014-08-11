@@ -1,37 +1,39 @@
 #!/usr/bin/perl
 
 my $ABOUT = <<___ ;
+<h1>Ingress Glyph Quiz</h1>
 
-This perl hack provides an interactive quiz to help you learn the "hacking
-glyphs" in the game Ingess. Thanks to http://glyphtionary.com for the images
+This little hack provides an interactive quiz to help you learn the "hacking
+glyphs" in the game Ingress. Thanks to 
+<a href="http://glyphtionary.com">http://glyphtionary.com</a> for the images
 you see in this quiz.
 
-The script has two functions:
-
-1) Use the -i flag to reinitialize the quiz. You'll have to edit this script.
-
-2) Invoke the script from a web browser (using a properly configured HTTP server)
-to play the quiz.
-
-It's crude and probably buggy. It's written by Will Irace, \@spblat on twitter.
-I claim no copyright or any other rights with respect to this code except to say
-that I wrote it and I (like you) have the right to modify or use it however I see
-fit.
+It's crude and probably buggy. It was made by <a href="http://twitter.com/spblat">\@spblat</a>.
+It's licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a>, 
+which means I don't really care what happens to it but I do retain some basic rights.
 
 This script displays images pulled directly from glyphtionary.com. If this annoys
 them they have the ability to break this script by denying access except with 
 a proper referrer. If they do that, I'll give them this code and ask them to 
 host it themselves, cause that would be cool.
 
-To do someday (probably by someone else):
+To do maybe (perhaps by someone else):
 
  - Make it so that you can't cheat by looking at the status bar
+ - Keep score
  - Track a user's trouble glyphs and focus on those
  - CSS/make it pretty/close HTML tags etc
- - Cookies
  - Eliminate dependence on glyphtionary.com images
  
- See also https://github.com/spblat/ingress-glyph-quiz
+ Features I don't care about
+ 
+ - Make it so you can't cheat by hacking the URL
+ - Social networking features, score-sharing
+ - Make it use cookies for some reason
+ - Cookies
+ 
+ You can see and contribute to <a href="https://github.com/spblat/ingress-glyph-quiz">the
+ perl source at GitHub</a>.
 
 ___
 
@@ -114,8 +116,8 @@ if ($opt_i) {
 }
 
 sub Intro {
-	print "<pre>$ABOUT</pre>";
-	print "<br /><b><a href='$ME?rand=1'>Begin</a></b>\n";
+	print "$ABOUT";
+	print "<br /><h1><a href='$ME?rand=1'>Begin</a></h1>\n";
 	exit;
 }
 
