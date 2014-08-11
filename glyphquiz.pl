@@ -102,7 +102,7 @@ if ($opt_i) {
 	my $answer = $query->param('q');
 	$WIN = $query->param('w') ? $query->param('w') : 0;
 	$LOSS = $query->param('l');
-	if ($guess && $answer) {
+	if (defined $guess && defined $answer) {
 		my $name = ${$VAR1}[$answer]{'name'};
 		if ($guess == $answer) {
 			print "<td style=\"background-color:green;text-align:center;width: 300px;\">\n";
