@@ -6,31 +6,31 @@ my $ABOUT = <<___ ;
 This little hack provides an interactive quiz to help you learn the "hacking
 glyphs" in the game Ingress. Thanks to 
 <a href="http://glyphtionary.com">http://glyphtionary.com</a> for the images
-you see in this quiz.
+you see in this quiz.<P>
 
 It's crude and probably buggy. It was made by <a href="http://twitter.com/spblat">\@spblat</a>.
 It's licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a>, 
-which means I don't really care what happens to it but I do retain some basic rights.
+which means I don't really care what happens to it but I do retain some basic rights.<P>
 
 This script displays images pulled directly from glyphtionary.com. If this annoys
 them they have the ability to break this script by denying access except with 
 a proper referrer. If they do that, I'll give them this code and ask them to 
-host it themselves, cause that would be cool.
+host it themselves, cause that would be cool.<P>
 
-To do maybe (perhaps by someone else):
+To do maybe (perhaps by someone else):<ul>
 
- - Make it so that you can't cheat by looking at the status bar
- - Keep score
- - Track a user's trouble glyphs and focus on those
- - CSS/make it pretty/close HTML tags etc
- - Eliminate dependence on glyphtionary.com images
+<LI> Make it so that you can't cheat by looking at the status bar
+<LI> Keep score
+<LI> Track a user's trouble glyphs and focus on those
+<LI> CSS/make it pretty/close HTML tags etc
+<LI> Eliminate dependence on glyphtionary.com images</ul>
  
- Features I don't care about
+ Features I don't care about:<ul>
  
- - Make it so you can't cheat by hacking the URL
- - Social networking features, score-sharing
- - Make it use cookies for some reason
- - Cookies
+<LI> Make it so you can't cheat by hacking the URL
+<LI> Social networking features, score-sharing
+<LI> Make it use cookies for some reason
+<LI> Cookies</ul><P>
  
  You can see and contribute to <a href="https://github.com/spblat/ingress-glyph-quiz">the
  perl source at GitHub</a>.
