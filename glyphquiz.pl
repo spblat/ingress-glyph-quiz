@@ -37,6 +37,8 @@ To do maybe (perhaps by someone else):<ul>
 
 ___
 
+# call it from the command line with -i to refresh the data that you see at bottom
+
 use strict;
 use warnings;
 use Getopt::Std;
@@ -138,10 +140,10 @@ sub PresentQuiz {
 			unshift @choices, $choice;
 		}
 	}
-	my $random = int(rand(65535)); # so links stay blue
+	my $random .= int(rand(10)) foreach (1 .. 500); # so links stay blue and you can't cheat with status bar
 	foreach (@choices) {
 		# display the multiple choices
-		print "<a href='$ME?q=$this&a=$_&rand=$random'>${$VAR1}[$_]{'name'}</a><br />\n";
+		print "<a href='$ME?rand=$random&q=$this&a=$_'>${$VAR1}[$_]{'name'}</a><br />\n";
 	}
 	print "</td>\n";
 }
