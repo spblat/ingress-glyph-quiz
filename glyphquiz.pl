@@ -43,7 +43,7 @@ use strict;
 use warnings;
 use Getopt::Std;
 our $opt_i;
-use vars qw($VAR1  $URL $ABOUT $ME);
+use vars qw($VAR1  $URL $ABOUT $ME $WIN $LOSS);
 
 $URL = 'http://glyphtionary.com';
 
@@ -87,7 +87,7 @@ if ($opt_i) {
 	&initialize or die;
 	my $q = CGI->new;
 	print $q->header;
-	print "<html><body bgcolor='#cccccc'><table cellpadding=80;table-layout:fixed;><tr>";
+	print "<html><body><table cellpadding=80;table-layout:fixed;><tr>";
 	# Let's have a quiz. 
 	my $query = CGI->new;
 	$ME = url(-relative=>1);
@@ -99,12 +99,16 @@ if ($opt_i) {
 	# test with CGI debug flag and "./glyphquiz.pl q=49 a=49"
 	my $guess = $query->param('a');
 	my $answer = $query->param('q');
+	$WIN = $query->param('w');
+	$LOSS = $query->param('l');
 	if ($guess && $answer) {
 		my $name = ${$VAR1}[$answer]{'name'};
 		if ($guess == $answer) {
 			print "<td style=\"background-color:green;text-align:center;width: 300px;\">\n";
+			$WIN++;
 		} else {
 			print "<td style=\"background-color:red;text-align:center;width: 300px;\">\n";
+			$LOSS++;
 		}
 		# Display the Glyph with the right name
 		print "<h1>${$VAR1}[$answer]{'name'}</h1>\n";
@@ -115,7 +119,7 @@ if ($opt_i) {
 	
 	print<<___;
 		</tr></table>
-		<p style="font-size:11px"><a href="$ME">about</a></p></font>
+		<p style="font-size:12px"><a href="$ME">about</a> | Won: $WIN | Lost: $LOSS</p></font>
 		</body></html>
 ___
 	
@@ -148,7 +152,7 @@ sub PresentQuiz {
 	$random .= int(rand(10)) foreach (1 .. 50); # so links stay blue
 	foreach (@choices) {
 		# display the multiple choices
-		print "<a style=\"color:white\" href='$ME?rand=$random&q=$this&a=$_'>${$VAR1}[$_]{'name'}</a><br />\n";
+		print "<a style=\"color:white\" href='$ME?rand=$random&q=$this&a=$_&w=$WIN&l=$LOSS'>${$VAR1}[$_]{'name'}</a><br />\n";
 	}
 	print "</td>\n";
 }
