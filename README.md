@@ -19,14 +19,12 @@ and ask them to host it themselves, cause that would be cool.
 To do maybe (perhaps by someone else):
 
 - Mobile version
-- Make it so that you can't cheat by looking at the status bar
 - Track a user's trouble glyphs and focus on those
-- CSS/make it pretty/close HTML tags etc
 - Eliminate dependence on glyphtionary.com images
 
 Features I don't care about:
 
-- Make it so you can't cheat by hacking the URL
+- Make it so you can't cheat by hacking the URL or looking at the status bar
 - Social networking features, score-sharing
 - Make it use cookies for some reason
 

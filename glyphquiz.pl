@@ -20,14 +20,12 @@ host it themselves, cause that would be cool.<P>
 To do maybe (perhaps by someone else):<ul>
 
 <LI> Mobile version
-<LI> Make it so that you can't cheat by looking at the status bar
 <LI> Track a user's trouble glyphs and focus on those
-<LI> CSS/make it pretty/close HTML tags etc
 <LI> Eliminate dependence on glyphtionary.com images</ul>
  
  Features I don't care about:<ul>
  
-<LI> Make it so you can't cheat by hacking the URL
+<LI> Make it so you can't cheat by hacking the URL or looking at the status bar
 <LI> Social networking features, score-sharing
 <LI> Make it use cookies for some reason
  
@@ -87,7 +85,9 @@ if ($opt_i) {
 	&initialize or die;
 	my $q = CGI->new;
 	print $q->header;
-	print "<html><body><table cellpadding=80;table-layout:fixed;><tr>";
+	print '<html><head><title>Ingress Glyph Quiz</title>';
+	print '<link rel="stylesheet" type="text/css" href="glyphquiz.css" />';
+	print '</head><body><div id="content">';
 	my $query = CGI->new;
 	$ME = url(-relative=>1);
 	my $checkforintro = $query->param('rand');
@@ -100,39 +100,44 @@ if ($opt_i) {
 	my $guess = $query->param('a');
 	my $answer = $query->param('q');
 	$WIN = $query->param('w') ? $query->param('w') : 0;
-	$LOSS = $query->param('l');
+	$LOSS = $query->param('l') ? $query->param('l') : 0;
 	if (defined $guess && defined $answer) {
 		my $name = ${$VAR1}[$answer]{'name'};
 		if ($guess == $answer) {
-			print "<td style=\"background-color:green;text-align:center;width: 300px;\">\n";
+			print '<div class="result" id="winner">';
 			$WIN++;
 		} else {
-			print "<td style=\"background-color:red;text-align:center;width: 300px;\">\n";
+			print '<div class="result" id="loser">';
 			$LOSS++;
 		}
 		# Display the Glyph with the right name
-		print "<h1>${$VAR1}[$answer]{'name'}</h1>\n";
-		print "<img src='$URL${$VAR1}[$answer]{'file'}'><br /></td>\n";
+		print "<p class=\"title\">${$VAR1}[$answer]{'name'}</p>\n";
+		print "<div class=\"glyph\"><img src='$URL${$VAR1}[$answer]{'file'}'></div>\n";
+		print "</div>\n";
 	}
 	
 	&PresentQuiz; # Present a quiz
 	
 	my $score;
 	if ($LOSS > 0) {
-		$score = "| Won: $WIN | Lost: $LOSS | " . int($WIN * 100 / ($WIN + $LOSS)) . "%";
+		$score = "<li class=\"foot\">W:$WIN</li>"
+			. "<li class=\"foot\">L:$LOSS</li>"
+			. "<li class=\"foot\">" 
+			. int($WIN * 100 / ($WIN + $LOSS)) . "%</li>";
 	} else {
-		$score = "| 100%";
+		$score = "<li class=\"foot\">100%</li>";
 	}
 	print<<___;
-		</tr></table>
-		<p style="align:center"><a href="$ME">about</a> $score</p></font>
-		</body></html>
+		<ul class="foot">
+		<li class="foot"><a href="$ME">about</a></li>
+		$score
+		</ul></div></body></html>
 ___
 	
 }
 
 sub Intro {
-	print "$ABOUT";
+	print "<html><head><title>Ingress Glyph Quiz</title></head><body>$ABOUT";
 	print "<P>There are " . scalar(@{$VAR1}) . " glyphs in this quiz.\n";
 	print "<p><h1><a href='$ME?rand=1'>Begin</a></h1></body></html>\n";
 	exit;
@@ -143,8 +148,10 @@ sub PresentQuiz {
 	my $howmany = scalar(@{$VAR1}); # we go from 0 to $howmany - 1
 	# my $last = ${$VAR1}[$howmany - 1]{'name'};
 	my $this = int(rand($howmany));
-	print "<td style=\"background-color:black;text-align:center;width: 300px;\"><h1 style=\"color:white\">What is it?</h1><h2> </h2>\n";
-	print "<img src='$URL${$VAR1}[$this]{'file'}'><br /><br />\n";
+	print "<div id=\"quiz\">\n";
+	print "<p class=\"title\">What is it?</p>\n";
+	print '<div class="glyph">';
+	print "<img src='$URL${$VAR1}[$this]{'file'}'></div>\n";
 	my @choices; # array of possible choices
 	push @choices, $this;
 	for (1 .. 3) {
@@ -157,11 +164,12 @@ sub PresentQuiz {
 	}
 	my $random = "I";
 	$random .= int(rand(10)) foreach (1 .. 50); # so links stay blue
+	print '<div class="choices"><ul>';
 	foreach (@choices) {
 		# display the multiple choices
-		print "<a style=\"color:white\" href='$ME?rand=$random&q=$this&a=$_&w=$WIN&l=$LOSS'>${$VAR1}[$_]{'name'}</a><br />\n";
+		print "<li class=\"choice\"><a class=\"guess\" href='$ME?rand=$random&q=$this&a=$_&w=$WIN&l=$LOSS'>${$VAR1}[$_]{'name'}</a></li>\n";
 	}
-	print "</td>\n";
+	print "</ul></div></div>\n";
 }
 
 sub initialize {

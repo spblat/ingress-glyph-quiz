@@ -1,0 +1,61 @@
+#content {
+    width:100%;
+    background:#f4f4f4;
+    display:inline-block;
+}
+.result {
+    width:50%;
+    height:400px;
+    float:left;
+}
+#winner {
+    background-color:green;
+}
+#loser {
+    background-color:red;
+}
+#quiz {
+    height:400px;
+    width:50%;
+    float:right;
+    background-color:black;
+    color:white;
+}
+.title {
+    font-size:x-large;
+    font-weight: bold;
+    text-align:center;
+    margin-top:10;
+    margin-bottom:20
+}
+.choices {
+    text-align:center;
+}
+li.choice {
+    padding:5px 30px 5px 0px;
+    margin:0;
+    list-style-type: none;
+}
+ul.foot li.foot {
+    float: left;
+    list-style-type: none;
+    border-right: 1px solid black;
+    padding: 0 .5em;
+    margin: 10px 0 10px 0;
+}
+ul.foot li:last-child.foot {
+    border: 0;
+}
+.glyph {
+    width: 150px;
+    margin: 0 auto;
+}
+a:visited.guess {
+	color: white
+}
+a:link.guess {
+	color: white
+}
+a:hover.guess {
+    background-color: green;
+}
