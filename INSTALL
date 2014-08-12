@@ -17,3 +17,6 @@ ln -s /var/www/html/ingress-glyph-quiz/glyphquiz.pl glyphquiz.pl
 If it doesn't work, check the error log. Perhaps you need to add
 "FollowSymLinks" to httpd.conf in <Directory "/var/www/cgi-bin">
 under Options.
+
+If it works but the quiz seems to display improperly, inspect the
+"$CSS" variable in the script and adjust it to match your situation.
