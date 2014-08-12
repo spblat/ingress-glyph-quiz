@@ -27,7 +27,7 @@ To do maybe (perhaps by someone else):<ul>
  
 <LI> Make it so you can't cheat by hacking the URL or looking at the status bar
 <LI> Social networking features, score-sharing
-<LI> Make it use cookies for some reason
+<LI> Make it use cookies for some reason</ul>
  
  You can see and contribute to <a href="https://github.com/spblat/ingress-glyph-quiz">the
  perl source at GitHub</a>.
@@ -40,9 +40,10 @@ use strict;
 use warnings;
 use Getopt::Std;
 our $opt_i;
-use vars qw($VAR1  $URL $ABOUT $ME $WIN $LOSS);
+use vars qw($VAR1  $URL $ABOUT $ME $WIN $LOSS $CSS);
 
-$URL = 'http://glyphtionary.com';
+$URL = 'http://glyphtionary.com'; # where to get the glyph images
+$CSS = '/ingress-glyph-quiz/glyphquiz.css'; # where to get our CSS
 
 getopts('i');
 
@@ -85,8 +86,9 @@ if ($opt_i) {
 	&initialize or die;
 	my $q = CGI->new;
 	print $q->header;
-	print '<html><head><title>Ingress Glyph Quiz</title>';
-	print '<link rel="stylesheet" type="text/css" href="glyphquiz.css" />';
+	print "<html>\n<head><title>Ingress Glyph Quiz</title>";
+	print '<link rel="stylesheet" type="text/css" href="' 
+		. $CSS . '" />';
 	print '</head><body><div id="content">';
 	my $query = CGI->new;
 	$ME = url(-relative=>1);

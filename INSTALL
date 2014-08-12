@@ -1,0 +1,19 @@
+You'll need to know how to get a perl script to run on a web server.
+Look into things like "mod_perl" and "apache perl cgi". Sorry, I
+won't help you do this.
+
+Because you probably shouldn't keep a perl script and a css file
+in the same directory, most default apache configurations won't
+"just work" if you use git to clone this software into /cgi-bin.
+Consider trying something like this (Centos 6.5 taken as an example):
+
+cd /var/www/html
+git clone git://github.com/spblat/ingress-glyph-quiz.git
+cd /var/www/cgi-bin
+ln -s /var/www/html/ingress-glyph-quiz/glyphquiz.pl glyphquiz.pl
+
+...then visit http://yourserver/cgi-bin/glyphquiz.pl.
+
+If it doesn't work, check the error log. Perhaps you need to add
+"FollowSymLinks" to httpd.conf in <Directory "/var/www/cgi-bin">
+under Options.
