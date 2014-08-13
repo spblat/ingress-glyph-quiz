@@ -5,7 +5,7 @@ ingress-glyph-quiz
 
 This little hack provides an interactive quiz to help you learn the "hacking 
 glyphs" in the game Ingress. Thanks to http://glyphtionary.com for the images 
-you see in this quiz.
+you see in this quiz. For now it's hosted at http://goo.gl/JpgOqX .
 
 It's crude and probably buggy. It was made by [@spblat](http://twitter.com/spblat). It's licensed under 
 the MIT License, which means I don't really care what happens to it but I 
